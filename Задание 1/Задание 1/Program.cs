@@ -32,23 +32,49 @@ namespace Задание__1
             return max;
         }
 
+        static int Min (int stepen, int S)
+        {
+            int min=0;
+            return min;
+        }
+
+        static int Max(int stepen, int S)
+        {
+            int max = stepen*9;
+            S = S - 9;
+            while (S>=9)
+            {
+                stepen /= 10;
+                max = max + stepen*9;
+                S -= 9;
+            }
+            max = max + stepen / 10 * S;
+            return max;
+        }
+
         static void Main(string[] args)
         {
             int K, S, max = 0, min = 0;
             Read(out K, out S);
 
             int stepen = Stepen(K);
+
             if (S == 1)
             {
                 max = stepen;
                 min = stepen;
             }
-            else if (S<10)
+            else if (S < 10)
             {
                 min = stepen + S - 1;
                 max = stepen * S;
             }
+            else
+            {
+                min = Min(stepen, S);
+                max = Max(stepen, S);
 
+            }
 
             Console.WriteLine("{0} {1}", max, min);
             Console.ReadLine();
