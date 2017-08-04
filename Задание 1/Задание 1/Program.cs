@@ -25,6 +25,14 @@ namespace Задание__1
             Trans(out K, out S, Str);
         }
 
+        static void Write (int max, int min)
+        {
+            FileInfo File = new FileInfo("OUTPUT.TXT");
+            StreamWriter Output = File.CreateText();
+            Output.WriteLine("{0} {1}",max,min);
+            Output.Close();
+        }
+
         static int Stepen(int K)
         {
             int max = 1;
@@ -69,8 +77,7 @@ namespace Задание__1
 
             }
 
-            Console.WriteLine("{0} {1}", max, min);
-            Console.ReadLine();
+            Write(max, min);
         }
     }
 }
