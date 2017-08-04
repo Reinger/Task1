@@ -32,23 +32,16 @@ namespace Задание__1
             return max;
         }
 
-        static int Min (int stepen, int S)
-        {
-            int min=0;
-            return min;
-        }
-
         static int Max(int stepen, int S)
         {
-            int max = stepen*9;
-            S = S - 9;
-            while (S>=9)
+            int max = stepen * 9;
+            while (S >= 9)
             {
                 stepen /= 10;
-                max = max + stepen*9;
+                max += stepen * 9;
                 S -= 9;
             }
-            max = max + stepen / 10 * S;
+            max += stepen / 10 * S;
             return max;
         }
 
@@ -71,8 +64,8 @@ namespace Задание__1
             }
             else
             {
-                min = Min(stepen, S);
-                max = Max(stepen, S);
+                min = stepen + S - 1;
+                max = Max(stepen, S - 9);
 
             }
 
@@ -81,5 +74,3 @@ namespace Задание__1
         }
     }
 }
-
-
