@@ -37,11 +37,18 @@ namespace Задание__1
             int K, S, max = 0, min = 0;
             Read(out K, out S);
 
+            int stepen = Stepen(K);
             if (S == 1)
             {
-                max = Stepen(K);
-                min = max;
+                max = stepen;
+                min = stepen;
             }
+            else if (S<10)
+            {
+                min = stepen + S - 1;
+                max = stepen * S;
+            }
+
 
             Console.WriteLine("{0} {1}", max, min);
             Console.ReadLine();
