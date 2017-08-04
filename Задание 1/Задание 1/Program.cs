@@ -25,10 +25,26 @@ namespace Задание__1
             Trans(out K, out S, Str);
         }
 
+        static int Stepen(int K)
+        {
+            int max = 1;
+            for (int i = 1; i < K; i++) max = max * 10;
+            return max;
+        }
+
         static void Main(string[] args)
         {
-            int K, S;
+            int K, S, max = 0, min = 0;
             Read(out K, out S);
+
+            if (S == 1)
+            {
+                max = Stepen(K);
+                min = max;
+            }
+
+            Console.WriteLine("{0} {1}", max, min);
+            Console.ReadLine();
         }
     }
 }
